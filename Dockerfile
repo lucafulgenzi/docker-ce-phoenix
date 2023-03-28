@@ -18,6 +18,8 @@ RUN mv ce-phoenix-cart-temp/PhoenixCart-master/* /var/www/html/
 RUN chmod 777 /var/www/html/includes/configure.php
 RUN chmod 777 /var/www/html/admin/includes/configure.php
 
+RUN rm -rf ce-phoenix-cart-temp  ce-phoenix-cart.zip
+
 
 EXPOSE 80
 CMD ["apache2-foreground"]
