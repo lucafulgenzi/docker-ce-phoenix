@@ -22,13 +22,9 @@ usage() {
       Usage: [-h] [-p] [-d]
       Available options:
       -h, --help          Print this help and exit
-      -s, --start          Generate .jar file for all services
-      -d, --dev           Generate .jar file for develop services ( discovery, api-gateway )
-      --discovery         Generate .jar file for discovery service
-      --apigateway        Generate .jar file for api-gateway service
-      --authorization     Generate .jar file for authorization service
-      --registry        Generate .jar file for registry service
-      --consiliabm        Generate .jar file for consiliabm service
+      -s, --start         If the docker already exists start it otherwise create it
+      -c, --create        Create the container from scratch
+      -d, --down          Stop the container and remove the volumes
 EOF
   exit
 }
