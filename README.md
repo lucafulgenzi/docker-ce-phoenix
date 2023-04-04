@@ -17,7 +17,8 @@ PMA_ARBITRARY=1
 PORT=9876
 ```
 
-2. Run `docker-compose up --build`
+
+2. Run `./phoenix.sh -s` ( if not work run `chmod +x ./phoenix.sh` )
 3. Open browser on `http://localhost:9876` or in the `PORT` specified in `.env` file
 4. Start installation procedure
 

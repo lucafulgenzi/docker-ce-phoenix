@@ -1,6 +1,6 @@
 FROM php:7.1-apache-stretch
 
-WORKDIR /app
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 RUN rm /etc/apt/preferences.d/no-debian-php
 
@@ -10,16 +10,7 @@ RUN apt-get update &&\
 
 RUN docker-php-ext-install mysqli
 
-RUN wget -nv -O /app/ce-phoenix-cart.zip https://github.com/CE-PhoenixCart/PhoenixCart/archive/master.zip
-
-RUN unzip ce-phoenix-cart.zip -d ce-phoenix-cart-temp
-RUN mv ce-phoenix-cart-temp/PhoenixCart-master/* /var/www/html/
-
-RUN chmod 777 /var/www/html/includes/configure.php
-RUN chmod 777 /var/www/html/admin/includes/configure.php
-
-RUN rm -rf ce-phoenix-cart-temp  ce-phoenix-cart.zip
-
+RUN chmod 777 /var/www/html
 
 EXPOSE 80
 CMD ["apache2-foreground"]
