@@ -73,7 +73,11 @@ remove_docker_volumes(){
 
 
 create_docker(){
-    remove_docker_volumes
+
+    if volume_exist;
+    then
+        remove_docker_volumes
+    fi
 
     mkdir "${temp_dir}"
     mkdir "${data_dir}"
