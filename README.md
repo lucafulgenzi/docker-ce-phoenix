@@ -1,5 +1,12 @@
 # CE-Phoenix Docker
 
+# Requirements
+
+1. docker and docker-compose
+2. unzip
+3. wget
+4. awk
+
 # How to run
 
 1. Create `.env` file
